@@ -6,7 +6,7 @@ import Rating from 'react-rating';
 const SingleReview = ({ review }) => {
     const { name, reviews, rating, image } = review
     return (
-        <div className='bg-slate-300 p-5 text-center w-3/4'>
+        <div className='bg-slate-300 p-5 text-center w-3/4 mx-auto'>
             <img className='rounded mx-auto' alt='' src={image} />
             <div className='pt-3'>
                 <Rating
