@@ -30,3 +30,6 @@ Live Link: [PACKBO](https://packbo.netlify.app/).
 
 ### 404 Page
 ![This is an image](src/images/404-ss.png)
+
+### Blog Page
+![This is an image](src/images/blog-ss.png)
