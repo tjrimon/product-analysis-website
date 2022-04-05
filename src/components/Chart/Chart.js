@@ -5,48 +5,48 @@ const Chart = () => {
     const data = [
         {
             "month": "Mar",
-            "investment": 100000,
+            "investment": 100,
             "sell": 241,
-            "revenue": 10401
+            "revenue": 104
         },
         {
             "month": "Apr",
-            "investment": 200000,
+            "investment": 200,
             "sell": 423,
-            "revenue": 24500
+            "revenue": 245
         },
         {
             "month": "May",
-            "investment": 500000,
+            "investment": 500,
             "sell": 726,
-            "revenue": 67010
+            "revenue": 670
         },
         {
             "month": "Jun",
-            "investment": 500000,
+            "investment": 500,
             "sell": 529,
-            "revenue": 40405
+            "revenue": 404
         },
         {
             "month": "Jul",
-            "investment": 600000,
+            "investment": 600,
             "sell": 601,
-            "revenue": 50900
+            "revenue": 509
         },
         {
             "month": "Aug",
-            "investment": 700000,
+            "investment": 700,
             "sell": 670,
-            "revenue": 61000
+            "revenue": 610
         }
     ]
     return (
         <div className='flex justify-center mt-16'>
-            <div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
                 <div>
                     <h3 className='text-center text-3xl uppercase font-mono font-bold pb-8'>Chart 01</h3>
-                    <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                        <Line type="monotone" dataKey="investment" stroke="#8884d8" />
+                    <LineChart width={380} height={320} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                        <Line type="monotone" dataKey="sell" stroke="#8884d8" />
                         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                         <XAxis dataKey="month" />
                         <YAxis />
@@ -54,10 +54,10 @@ const Chart = () => {
                     </LineChart>
                 </div>
                 <div>
-                    <h3 className='text-center text-3xl uppercase font-mono font-bold pt-16 pb-8'>Chart 02</h3>
+                    <h3 className='text-center text-3xl uppercase font-mono font-bold pb-8'>Chart 02</h3>
                     <BarChart
-                        width={600}
-                        height={400}
+                        width={400}
+                        height={350}
                         data={data}
                         margin={{
                             top: 5,
@@ -72,13 +72,14 @@ const Chart = () => {
                         <Tooltip />
                         <Legend />
                         <Bar dataKey="sell" fill="#8884d8" />
+                        <Bar dataKey="investment" fill="orange" />
                     </BarChart>
                 </div>
                 <div>
                     <h3 className='text-center text-3xl uppercase font-mono font-bold pt-16 pb-8'>Chart 03</h3>
                     <AreaChart
-                        width={600}
-                        height={400}
+                        width={400}
+                        height={350}
                         data={data}
                         margin={{
                             top: 10,
@@ -91,16 +92,17 @@ const Chart = () => {
                         <XAxis dataKey="month" />
                         <YAxis />
                         <Tooltip />
-                        <Area type="monotone" dataKey="investment" stackId="1" stroke="#8884d8" fill="#8884d8" />
                         <Area type="monotone" dataKey="sell" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
+                        <Area type="monotone" dataKey="investment" stackId="1" stroke="blue" fill="blue" />
                         <Area type="monotone" dataKey="revenue" stackId="1" stroke="#ffc658" fill="#ffc658" />
+
                     </AreaChart>
                 </div>
                 <div className='pb-20'>
                     <h3 className='text-center text-3xl uppercase font-mono font-bold pt-16 pb-8'>Chart 04</h3>
                     <LineChart
-                        width={600}
-                        height={400}
+                        width={400}
+                        height={380}
                         data={data}
                         margin={{
                             top: 5,
@@ -116,7 +118,7 @@ const Chart = () => {
                         <Legend />
                         <Line type="monotone" dataKey="investment" stroke="#8884d8" activeDot={{ r: 8 }} />
                         <Line type="monotone" dataKey="sell" stroke="#82ca9d" />
-                        <Line type="monotone" dataKey="revenue" stroke="#82ca9d" />
+                        <Line type="monotone" dataKey="revenue" stroke="orange" />
                     </LineChart>
                 </div>
             </div>
